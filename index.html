@@ -5,7 +5,14 @@
     <title>SmashLove Weather App for Free Code Camp</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
+  <body onload="getLocation()">
+    <header>
+      <h1>Weather App</h1>
+    </header>
 
-  </body>
+    <p id="weather"></p>
+    <p id="info"></p>
+    <button id="getWeather" onclick="sendRequest()">Get Weather</button>
+
+</body>
 </html>
