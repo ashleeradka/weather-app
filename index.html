@@ -4,15 +4,26 @@
     <meta charset="utf-8">
     <title>SmashLove Weather App for Free Code Camp</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Proza+Libre:400');
+    </style>
   </head>
-  <body onload="getLocation()">
+
+<body id="back" class="day" onload="getLocation()">
+  <div id="wrapper">
     <header>
       <h1>Weather App</h1>
     </header>
-
-    <p id="weather"></p>
-    <p id="info"></p>
-    <button id="getWeather" onclick="sendRequest()">Get Weather</button>
-
+    <div id="contents">
+      <p id="info"></p>
+      <img id="icon">
+      <p id="weather"></p>
+      <p id="sky"></p>
+    </div>
+    <div id="button">
+      <button id="getWeather" onclick="sendRequest()">Get Weather</button>
+      <button id="temp" onclick="changeF()">Change to &deg;C</button>
+    </div>
+  </div>
 </body>
 </html>
