@@ -23,6 +23,7 @@ function showPosition(position) {
   lon = position.coords.longitude;
   weatherAPI = weatherURL(lon, lat);
   openRequest(weatherAPI);
+  sendRequest();
 }
 
 var request = new XMLHttpRequest();
@@ -41,22 +42,23 @@ request.onreadystatechange = function() {
     var tempC = Math.round(weatherData.main.temp);
     var tempF = Math.round(weatherData.main.temp * 1.8 + 32);
     var currentTime = new Date();
-    document.getElementById("info").innerHTML =
+    document.getElementById("h").innerHTML =
       weatherData.name + ", " + weatherData.sys.country;
-    document.getElementById("weather").innerHTML = "Temp: " + tempF + "&deg;F";
+    document.getElementById("weather").innerHTML = tempF + "&deg;F";
     document.getElementById("sky").innerHTML =
       weatherData.weather[0].main + ": " + weatherData.weather[0].description;
     document.getElementById("icon").src = weatherData.weather[0].icon;
     background(currentTime.getHours());
   }
+  document.getElementById("temp").setAttribute("class", "vis")
 };
 
 function changeF() {
   arr = document.getElementById("weather").innerHTML.split(" ");
-  temp = arr[1];
+  temp = arr[0];
   num = temp.split("F")[0].slice(0, -1);
   tempC = Math.round((num - 32) / 1.8);
-  arr[1] = tempC + "&deg;" + "C";
+  arr[0] = tempC + "&deg;" + "C";
   document.getElementById("weather").innerHTML = arr.join(" ");
   document.getElementById("temp").innerHTML = "Change to &deg;F";
   document.getElementById("temp").setAttribute("onclick", "changeC()");
@@ -64,10 +66,10 @@ function changeF() {
 
 function changeC() {
   arr = document.getElementById("weather").innerHTML.split(" ");
-  temp = arr[1];
+  temp = arr[0];
   num = temp.split("C")[0].slice(0, -1);
   tempC = Math.round(num * 1.8 + 32);
-  arr[1] = tempC + "&deg;" + "F";
+  arr[0] = tempC + "&deg;" + "F";
   document.getElementById("weather").innerHTML = arr.join(" ");
   document.getElementById("temp").innerHTML = "Change to &deg;C";
   document.getElementById("temp").setAttribute("onclick", "changeF()");

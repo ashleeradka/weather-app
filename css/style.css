@@ -1,16 +1,36 @@
 .day {
-  background-color: #37d8e6;
+    height: 100vh;
+    background: #37d8e6; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#FFFFFF, #37d8e6, #FFFFFF); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #37d8e6, white, #37d8e6); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #37d8e6, white, #37d8e6); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(right, #37d8e6, white, #37d8e6); /* Standard syntax (must be last) */
 }
+
+/* .day {
+  background-color: #37d8e6;
+} */
 
 .night {
   background-color: #2c3e50;
   color: #FFFFFF;
+  height: 100vh;
+    background: #2c3e506; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient( #2c3e50, black, #2c3e50); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, #2c3e50, #37d8e6, #2c3e50); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, #2c3e50, #37d8e6, #2c3e50); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(right, #2c3e50, #37d8e6, #2c3e50); /* Standard syntax (must be last) */
+}
+
+header {
+  margin-top: 10%;
 }
 
 p, h1 {
   font-family: 'Proza Libre', sans-serif;
   margin: auto;
   text-align: center;
+  padding: 1%;
 }
 
 img {
@@ -20,8 +40,16 @@ img {
 
 #button {
   clear: both;
-  padding: 1%;
+  padding-top: 3%;
   text-align: center;
+}
+
+.vis {
+  visibility: visible;
+}
+
+.hid {
+  visibility: hidden;
 }
 
 #wrapper {
@@ -31,8 +59,24 @@ img {
   left: 1%;
   bottom: 1%;
   right: 1%;
-  height: 100%;
-  width: 100%;
 }
+
+div#contents {
+
+  margin: auto;
+  width: 25%;
+  padding: 3%;
+
+}
+
+#weather {
+  font-size: 45px;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+
 
 /* http://paletton.com/palette.php?uid=7040u0kjouf9xNaeSBKnmqMqXlZ */
